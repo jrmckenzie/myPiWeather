@@ -8,7 +8,7 @@ An example PHP script is included which renders a web page with dynamically gene
 Requirements
 ------------
 
-You will need a Raspberry Pi computer with BME280 ambient sensor connected and working. This script was written for the Pimoroni BME280 sensor attached to a Pi Zero-W but should work with most other makes.
+You will need a Raspberry Pi computer with BME280 ambient sensor connected and working. This script was written for the Pimoroni BME280 sensor attached to a Pi Zero-W but should work with most other makes. You will need to have sqlite3 installed on your Pi.
 You will need to have the following python modules installed:
 * pimoroni-bme280
 * thingspeak
