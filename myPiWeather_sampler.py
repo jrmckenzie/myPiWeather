@@ -32,6 +32,7 @@ try:
     from smbus2 import SMBus
 except ImportError:
     from smbus import SMBus
+bus = SMBus(1)
 
 # This is the beginning of the user configuration section. Customise to suit your setup.
 # Configure the path to your weather data sampling database. The directory will need to be writable by this
@@ -53,7 +54,14 @@ probe = "28-0114559c70aa"
 channel_id = 0
 write_api_key  = 'insert_your_key_here'
 
+# Set address of the BME280 device - the default 0x76 should be fine unless you have intentionally set your
+# BME280 sensor hardware address to 0x77. You may have done so if, for example, you have a second BME280.
+bme_i2c_addr = 0x76
+
 # That is the end of the user configuration section.
+
+# Set up the connection with the chosen sensor
+bme280 = BME280(i2c_dev=bus, i2c_addr=bme_i2c_addr)
 
 # Provide some basic information as the script initialises.
 logging.basicConfig(
@@ -79,9 +87,6 @@ if not os.path.exists(my_database):
 
 if channel_id != 0:
     channel = thingspeak.Channel(id=channel_id, api_key=write_api_key)
-
-bus = SMBus(1)
-bme280 = BME280(i2c_dev=bus)
 
 # Set the BME280 sensors to "forced" mode which is supposed to be best for long sampling intervals
 bme280.setup(mode="forced", temperature_oversampling=1, pressure_oversampling=1, humidity_oversampling=1)
