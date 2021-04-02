@@ -1,5 +1,5 @@
 # myPiWeather
-Record BME280 and DS18B20 sensor information locally and (optionally) upload to thingspeak
+Record BME280 and DS18B20 sensor information locally and (optionally) upload to thingspeak. View current data with local php web page.
 
 This is a python script for the Raspberry Pi with BME280 temperature, pressure and humidity sensor. The script also supports an additional DS18B20 one-wire temperature sensor if you have one. Weather data is logged to a sqlite database.
 
