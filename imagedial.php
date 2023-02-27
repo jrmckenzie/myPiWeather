@@ -2,7 +2,7 @@
 
 // Copyright (C) 2023 James McKenzie jrmknz@yahoo.co.uk
 // Set up fonts and images to be used
-$facePng = "barometer_600.png";
+$facePng = "face_hPa.png";
 $textFont = "Rubik-Medium.ttf";
 $pointerFont = "barometer.ttf";
 $textFontsize = 40;
