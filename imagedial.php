@@ -44,7 +44,7 @@ imagettftext($face, $textFontsize, 0, $textXpos, $textYpos, $black, $textFont, $
 imagettftext($face, $pointerFontsize, $angle, intval($faceW / 2), intval($faceH / 2), $black, $pointerFont, '-') or die("Couldn't draw pointer! Is $pointerFont a valid, readable truetype font file?");
 
 // Dark mode
-imagefilter($face, IMG_FILTER_NEGATE);
+//imagefilter($face, IMG_FILTER_NEGATE);
 
 // Trim $trimPx pixels off borders of image
 $trimPx = 0;
